@@ -1,0 +1,121 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-align-justify"></i> <label class="h5">Release ForFeit Of EMD </label>
+          <!-- <small>Form</small> -->
+        </div>
+        <div class="card-body">
+            <div class="shadow-lg p-3 mb-5 bg-white rounded" id="cardhide4">
+                <input type="hidden" [(ngModel)]="emdId"     >
+                <div class="row">
+                    <div class="col-sm-12">
+                      <table class="table table-bordered table-striped">                     
+                        <tbody>                         
+                        <tr>
+                   
+
+                            <td >RFP No & Date :</td>
+                            <td  style="color:blue" >{{data.rfpNo}}  <span>&</span> {{data.rfpDate}}</td>
+                            <td> Name Of Firm :</td>
+                         
+                            <td  style="color:blue" >{{data.nameOfFirm}}</td>                        
+                        </tr>
+                        <tr>
+                            <td>FDR/ BG NUMBER: </td>
+                            <td  style="color:blue" >{{data.fdrbgNumber}}</td>
+                            <td> EMD Amount Recd :</td>
+                            <td  style="color:blue" >{{data.emdAmountRecd}}</td>                        
+                        </tr>
+                        <tr>
+
+                          
+
+                          <td> <div class="form-group">
+                              <label class="h5" for="ItemName">Release / Forfeit  <span style="color:red">*</span></label>
+                              <select class="form-control" [(ngModel)]="releaseEMD"  >                                                            
+                                  <option [ngValue]="item.name" *ngFor="let item of rfdata">
+                                      {{item.name}}
+                                    </option>
+                         
+                              </select>
+                            </div> </td>
+                            <td>
+                                <div class="form-group">
+                                    <label class="h5" for="User">Date Of Release / Forfeit 
+                                    </label>
+                                    <input type="date"  [(ngModel)]="releaseEMDDate" class="form-control" placeholder="Ente">
+                                  </div>
+                            </td>
+                            <td colspan="2" >
+                                <div class="form-group">
+                                    <label class="h5" for="User">Reason of Release/Forfeit
+                                    </label>
+                                    <input type="text" [(ngModel)]="reasonReleaseEMD" class="form-control" placeholder="Ente Reason of Release">
+                                  </div>
+                            </td>
+                            
+                        </tr>
+                        </tbody>
+                      </table>                     
+                    </div>
+                  </div>
+
+        
+                    <div class="row">
+
+            
+              <div class="pull-right" *ngIf="showRelease"  >
+                <label></label>
+                <input type="button" class="btn btn-info"   (click)="releaseForFeitOFEMD('Release')"   value="Release of EMD  " />
+              </div>
+              <div class="pull-right" *ngIf="showForfeit" > 
+                <label></label>
+                 <input type="button"  (click)="releaseForFeitOFEMD('Forfeit')"  class="btn btn-info" value="Forfeit of EMD " />
+              </div>          
+             
+             
+              <!-- <div class="pull-right">
+                <label></label>
+                <input type="button" class="btn btn-info" value=" RBI Challan" />
+              </div>
+              <div class="pull-right">
+                  <label></label>
+                  <input type="button" class="btn btn-info" value="Update" />
+                </div> -->
+            </div>
+          <br>
+      
+        
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<style>
+    .DateColW {
+      width: 32%;
+    }
+
+    .h5 {
+      font-size: 18px;
+      font-weight: 600;
+      font-style: italic;
+    }
+  
+    .lblHeading {
+      font-size: 23px;
+      font-weight: 600;
+      font-style: italic;
+      text-decoration: underline;
+    }
+    .table tr
+    {
+      font-size: 18px;
+      font-weight: 600;
+      font-style: italic;
+    }
+  </style>

@@ -1,0 +1,253 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-align-justify"></i> <label class="h5">Add DP</label>
+          <!-- <small>Form</small> -->
+        </div>
+        <div class="card-body">
+            <div class="shadow-lg p-3 mb-5 bg-white rounded" id="cardhide4">
+          <div class="row">
+           
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label class="h5" for="Indent">Indent No & Date</label>
+                <!-- <input type="text" class="form-control" id="vat" placeholder="Enter Indent No & Date">
+               -->
+                <select class="form-control" id="indtno" [(ngModel)]="indtno">
+                  <option  *ngFor="let sub of indentResponse"  value="{{sub.indentId}}">{{sub.indentNo}}</option>
+                  
+                </select>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label class="h5" for="DPLetter">DP Letter No </label>
+                <input type="text" [(ngModel)]="dpletterNo" class="form-control" id="street" placeholder="Enter DP Letter No & Date">
+              </div>
+            </div>
+            <!-- <div class="col-sm-4">
+              <div class="form-group">
+                <label class="h5" for="DPLetter">DP Date</label>
+                <input type="date" [(ngModel)]="dpDate" class="form-control" id="street" placeholder="Enter DP Letter No & Date">
+              </div>
+            </div> -->
+          </div>
+
+          <div class="row">
+            <div class="col-sm-4">
+              <label class="h5" for="Consumtion">Item </label>
+              <div class="controls">
+                <div class="input-group">
+                  <select class="form-control" id="Item" [(ngModel)]="Item">
+                    <option  *ngFor="let item of itemResponse"  value="{{item.itemId}}">{{item.itemName}}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <div class="row">
+                  <div class="col DateColW">
+                    <label class="h5" for="AccUnit"> DP (From Date)
+                      <span style="color:red">*</span></label>
+                    <input type="date" [(ngModel)]="fromdate" class="form-control" id="FromDate" placeholder="Enter From Date  ">
+                  </div>
+                  <div class="col DateColW">
+                    <label class="h5" for="AccUnit"> DP (To Date)
+                      <span style="color:red">*</span></label>
+                    <input type="date" [(ngModel)]="todate" class="form-control" id="ToDate" placeholder="Enter To Date  ">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="col-sm-4">
+              <div class="form-group">
+                <label class="h5"  for="DeliveryPeriod">Delivery Period </label>
+                <input type="date" class="form-control" id="DeliverPeriod" placeholder="Enter From  Date">
+                <input type="date" class="form-control" id="DeliverPeriod" placeholder="Enter to  Date">
+              </div>
+            </div> -->
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label class="h5" for="Qty"> Qty</label>
+                <input type="text" [(ngModel)]="Qty" class="form-control" id="Qty" placeholder="Enter Qty">
+              </div>
+            </div>
+
+          </div> <br>
+          <div class="row">
+
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label class="h5" for="EMDAmount">EMD Amount (In Rs)</label>
+                <input type="text" [(ngModel)]="emdAmmount" readonly class="form-control" id="EMDAmount"
+                  placeholder="Enter  EMD Amount (In Rs) ">
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label class="h5"  for="AcctUnit">Acct Unit</label>
+                <select class="form-control" [(ngModel)]="accUnit" >               
+                  <option *ngFor="let item of acctUnitDDL"  value="{{item.acctUnitId}}">
+                    {{item.acctUnit}}
+                  </option>
+                </select>
+                <!-- <input type="text" class="form-control" id="AcctUnit" placeholder="Enter  Acct Unit "> -->
+              </div>
+            </div>
+
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label class="h5" for="AWS">Upload DP Letter</label>
+                <input type="file" class="form-control" id="UploadDP">
+              </div>
+            </div>
+
+            <div class="col-sm-1" style="padding-left: 2%;">
+              <div class="form-group">
+                <label class="h5" for="AWS">AWS</label> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                <label style="padding-top: 7%;" class="switch switch-3d switch-success">
+                  <input type="checkbox" [(ngModel)]="IsAWS" class="form-control switch-input" checked>
+                  <span class="switch-slider"></span> </label>
+              </div>
+            </div>
+
+          </div>
+          <div class="row">
+            <!-- <div class="col-sm-3">
+              <div class="form-group">
+                <label class="h5" for="TypeQty">Type of Qty </label>
+                <div class="controls">
+                  <div class="input-group">
+                    <select [(ngModel)]="qtyType" class="form-control" id="TypeQty">
+                      <option value="Killo">Killo</option>
+                      <option value="Liter">Liter</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            <!-- <div class="col-sm-3">
+              <div class="form-group">
+                <label class="h5" for="Qty"> Qty </label>
+                <input [(ngModel)]="qty" type="text" class="form-control" id="Pack20" placeholder="Enter Qty Of Pack  ">
+              </div>
+            </div> -->
+            <!-- <div class="col-sm-3">
+              <div class="form-group">
+                <label class="h5" for="Qty"> Pack </label>
+                <input [(ngModel)]="pack" type="text" class="form-control" id="Pack50" placeholder="Enter  No of Packs ">
+              </div>
+            </div> -->
+            <div *ngIf="edit==1" class="col-sm-2" style=" padding-top: 0.5%;">
+              <label></label>
+              <button type="button" class="btn btn-block btn-success" (click)="updateDP()">Update</button>
+            </div>
+            <div *ngIf="edit==0" class="col-sm-1" style=" padding-top: 0.5%;">
+              <label></label>
+              <button type="button" class="btn btn-block btn-success" (click)="addNewDP()">Add</button>
+            </div>
+            <div class="col-sm-1" style="padding-top: 0.5%;">
+              <label></label>
+              <button type="button" class="btn btn-block btn-warning">Reset</button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <table class="table table-bordered table-striped">
+                <thead>
+                  <tr>
+                    <th rowspan="2">S/No</th>
+                    <th rowspan="2">Delivery Period</th>
+                    <th rowspan="2">Acct Unit</th>
+                    <th rowspan="2">Qty</th>
+                    <th rowspan="2">EMD Amount (In Rs) </th>
+                    <th colspan="2">Qty Required in Bags for AWS</th>
+                    <th rowspan="2">Download DP Letter</th>
+                    <th rowspan="2">Actions</th>
+                    <th rowspan="2">Verify</th>
+                  </tr>
+                  <tr>
+                    <th>
+                      In 20 Kgs
+                    </th>
+                    <th>
+                      In 50 Kgs
+                    </th>
+                  </tr>
+                </thead>
+                <tbody *ngFor="let item of dpList">
+                  <tr>
+                    <td colspan="10"><label class="h5">Item Name : {{item.itemName}}</label></td>
+                  </tr>
+                  <tr *ngFor="let innerItem of item.dplist">
+                    <td>1</td>
+                    <td>{{innerItem.deliveryPdFromDate}} to {{innerItem.deliveryPdToDate}}</td>
+                    <td>{{innerItem.acctUnit}}</td>
+                    <td>{{innerItem.qty}}</td>
+                    <td>{{innerItem.emdAmount}}</td>
+                    <td></td>
+                    <td></td>
+                    <td><i style="font-size: 25px;color: red;" class="fa fa-file-pdf-o" aria-hidden="true"></i></td>
+                    <td><i style="color: #167495;font-size: 23px;" class="fa fa-pencil-square-o" aria-hidden="true" (click)="Edit(innerItem)"></i>
+                      <span>|</span> <i style="color: red;font-size: 22px" class="fa fa-trash-o" aria-hidden="true" (click)="
+                      removeDP(innerItem.deliveryPeriodId)"></i>
+                    </td>
+                    <td *ngIf="innerItem.isVerify==1"><span>Verfiy</span></td>
+                    <td *ngIf="innerItem.isVerify==0"><span>Rejected</span></td>
+                    <td *ngIf="innerItem.isVerify==NULL"><i  style="color:#00c851;font-size: 20px" class="fa fa-check" aria-hidden="true" (click)="verifyDP(innerItem.deliveryPeriodId)"></i> <span> |
+                      </span><i  style="color: #ff4444;font-size: 20px" class="fa fa-times" aria-hidden="true" (click)="rejectDP(innerItem.deliveryPeriodId)"></i> </td>
+                  </tr>
+                </tbody>
+              </table>
+              <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                <li class="page-item active">
+                  <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+        </div>
+        <div class="card-footer">
+         
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/.row-->
+
+
+
+</div>
+<style>
+  .h5 {
+      font-size: 18px;
+      font-weight: 600;
+      font-style: italic;
+    }
+ 
+    .lblHeading {
+      font-size: 23px;
+      font-weight: 600;
+      font-style: italic;
+      text-decoration: underline;
+    }
+    .table th
+    {
+      font-size: 18px;
+      font-weight: 600;
+      font-style: italic;
+    }
+  .DateColW {
+    width: 32%;
+  }
+</style>

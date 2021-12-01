@@ -1,0 +1,150 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-align-justify"></i> <label class="h5">View Vendors Details </label>
+          <!-- <small>Form</small> -->
+        </div>
+        <div class="card-body">
+            <div class="shadow-lg p-3 mb-5 bg-white rounded" id="cardhide4">
+
+          <br>
+          <div class="row">
+            <div class="col-sm-12">
+              <table class="table table-bordered table-striped">
+                <tbody *ngFor="let sub of BasicDetails" >                  
+                  <tr>
+                    <td colspan="6"><span class="text">Basic Details</span></td>
+                  </tr>
+
+                 
+
+                  <tr>
+                    <td><b>Vendor Name</b></td>
+                    <td>{{sub.nameOfFirm}} </td>
+                    <td><b>Type Of Firm <br> &  Is MSME </b></td>
+                    <td>{{sub.isRegisterVal}} <br> <span>  &   </span>{{sub.ismsmeVal}}   </td>
+                    <td><b> Registered With APO </b></td>
+                    <td>{{sub.registerWithAPOVal}}</td>
+                  </tr>
+                  <tr>
+                    <td><b> GST No</b></td>
+                    <td>{{sub.gstNumber}}</td>
+                    <td><b>Registration Validity with APO (From Date)</b></td>
+                    <td>{{sub.registrationValidityWithAPOFromDate}}</td>
+                    <td><b>Registration Validity with APO (To Date)</b></td>
+                    <td>{{sub.registrationValidityWithAPOToDate}}</td>                  
+                  </tr>
+                  <tr>
+                    <td colspan="6"><span class="text">FASSI Details</span></td>
+                  </tr>
+                  <tr>
+                    <td><b>Production Capacity Per Month as Per FSSAI</b></td>
+                    <td>{{sub.productionCapacityPerMonthAsPerFSSAI}}</td>
+                    <td><b>FSSAI Certificate Number </b></td>
+                    <td>{{sub.fssaiCertificateNumber}}</td>
+                    <td><b>Validity (From Date) & (To Date) </b></td>
+                    <td>{{sub.validityOfFSSAICertificateFromDate}} <span> &  </span> {{sub.validityOfFSSAICertificateToDate}}</td>
+                  </tr>
+                  <tr>
+                    <td colspan="6"><span class="text">HACCP Details</span></td>
+                  </tr>
+                  <tr>
+                    <td><b>ISO 22000-2005/HACCP Certificate No.</b></td>
+                    <td>{{sub.isohaccpCertificateNumber }} </td>
+                    <td><b>Validity (From Date)</b></td>
+                    <td>{{sub.validityOfISOHACCPCertificateNumberFromDate }} </td>
+                    <td><b>Validity (To Date) </b></td>
+                    <td>{{sub.validityOfISOHACCPCertificateNumberToDate }} </td>
+                  </tr>
+                  <tr>
+                    <td colspan="6"><span class="text"> Technical Inspection Details</span></td>
+                  </tr>
+                  
+                  <tr>
+                    <td><b>Report</b></td>
+                    <td>{{sub.technicalInspectionReport }} </td>
+                    <td><b>Validity (From Date)</b></td>
+                    <td>{{sub.validityOfTechnicalInspectionReportFromDate }} </td>
+                    <td><b>Validity (To Date) </b></td>
+                    <td>{{sub.validityOfTechnicalInspectionReportToDate }} </td>
+                  </tr>
+                  <tr>
+                    <td colspan="6"><span class="text">Hygiene Inspection Details</span></td>
+                  </tr>
+                  <tr>
+                    <td><b>Report</b></td>
+                    <td>{{sub.hygieneInspectionReport }} </td>
+                    <td><b>Validity (From Date)</b></td>
+                    <td>{{sub.validityOfHygieneInspectionReportFromDate }} </td>
+                    <td><b>Validity (To Date) </b></td>
+                    <td>{{sub.validityOfHygieneInspectionReportToDate }} </td>
+                  </tr>
+                  <tr>
+                    <td colspan="6"><span class="text">Trade Mark Details</span></td>
+                  </tr>
+                  <tr>
+                    <td><b>Certificate No.</b></td>
+                    <td>{{sub.tradeMarkCertificateNumber }} </td>
+                    <td><b>Validity (From Date)</b></td>
+                    <td>{{sub.validityOfTradeMarkCertificateNumberFromDate }} </td>
+                    <td><b>Validity (To Date) </b></td>
+                    <td>{{sub.validityOfTradeMarkCertificateNumberToDate }} </td>
+                  </tr>
+                </tbody>
+                <tbody>
+                  
+                    <tr>
+                        <td colspan="6"><span class="text">Ware House Address & Item For Register</span></td>
+                      </tr>
+                      <tr>
+                          
+                        <th colspan="2"> <span class="text">Item Name</span> </th>
+                        <th colspan="2"> <span class="text">Ware House Address</span> </th>
+                        <th colspan="2"> <span class="text">Storage Capacity</span> </th>
+                        
+                      </tr>
+                      <tr *ngFor="let sub of data">
+                          
+                        <td colspan="2"> {{sub.itemName}}</td>
+                        <td colspan="2">{{sub.wareHouseAddress}}</td>
+                        <td colspan="2">{{sub.storageCapacity}}</td>
+                      </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .h5 {
+      font-size: 18px;
+      font-weight: 600;
+      font-style: italic;
+    }
+  
+    .lblHeading {
+      font-size: 23px;
+      font-weight: 600;
+      font-style: italic;
+      text-decoration: underline;
+    }
+    .table th
+    {
+      font-size: 18px;
+      font-weight: 600;
+      font-style: italic;
+    }
+
+  .text {
+    font-size: 23px;
+    font-weight: 600;
+    font-style: italic;
+
+  }
+</style>

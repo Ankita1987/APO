@@ -1,0 +1,135 @@
+<div class="animated fadeIn">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header">
+            <i class="fa fa-align-justify"></i> <label class="h5">Add Item Details</label>
+  
+          </div>
+          <div class="card-body">
+              <div class="shadow-lg p-3 mb-5 bg-white rounded" id="cardhide4">
+           <div class="row">
+              <div class="col-12"><label class="lblHeading">Add Item</label></div>
+            
+            </div>
+            <br>
+           
+            <div class="row">
+              <div class="col-3">
+                 <div class="form-group">
+                  <label class="h5"  >Item Name </label>
+                  <input type="hidden"  [(ngModel)]="ItemId" >
+                  <input type="text"   [(ngModel)]="ItemName"  class="form-control" 
+                  placeholder="Enter Item Name ">
+                 </div>
+              </div>
+              <div class="col-3">
+                <div class="form-group">
+                 <label class="h5" >Item Type  </label>
+                 <input type="text"  [(ngModel)]="Type"  class="form-control" 
+                 placeholder="Enter Item Type  ">
+                </div>
+             </div>
+             <div class="col-3">
+              <div class="form-group">
+               <label class="h5" >Category  </label>     
+              <select class="form-control" [(ngModel)]="CategoryName" >               
+                <option [ngValue]="item.categoryName" *ngFor="let item of categoryDDL">
+                  {{item.categoryName}}
+                </option>
+              </select>
+              </div>
+           </div>
+           <div class="col-3">
+            <div class="form-group">
+             <label class="h5" > Item Group  </label>           
+             <select class="form-control" [(ngModel)]="GroupId" >               
+                <option [ngValue]="item.groupId" *ngFor="let item of groupDDL">
+                  {{item.groupName}}
+                </option>
+              </select>
+
+            </div>
+         </div>
+              </div>
+            <br>
+           
+  
+            <div class="row">
+              <div class="col-8">
+  
+              </div>
+              <div class="col-2">
+                <label></label>
+                <button type="button" *ngIf="add" (click)="addItemModel()"  class="btn btn-block btn-success">Add </button>
+                <button type="button" *ngIf="update" (click)="updateItemModel()"  class="btn btn-block btn-success">Update </button>
+              </div>
+               <div class="col-sm-2" >
+                <label></label>
+                <button (click)="clearModel()" type="button" class="btn btn-block btn-warning">Reset</button>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-sm-12">
+               <table class="table table-bordered table-striped">
+                 <thead>
+                   <tr>
+                     <th rowspan="2" >S/No</th>
+                   
+                     <th rowspan="2">Item Name</th>
+                     <th rowspan="2">Item Type </th>
+                     <th rowspan="2">Item Category </th>
+                     <th rowspan="2">Item Group  </th>
+                     <th rowspan="2">Actions </th>
+                   </tr>
+                  
+                 </thead>
+                 <tbody>                                     
+                 
+                  <tr *ngFor="let sub of data">
+                    <td>{{sub.$id}}</td>
+                    <td>{{sub.itemName}}</td>
+                    <td>{{sub.type}}</td>               
+                    <td>{{sub.categoryName}}</td>
+                    <td>{{sub.groupName}}</td>
+                    <td><i style="color: #167495;font-size: 23px;" class="fa fa-pencil-square-o"
+                       aria-hidden="true"   (click)="editItemMaster(sub.itemId)"   ></i> <span>|</span> 
+                        <i style="color: red;font-size: 22px" (click)="removeItemMaster(sub.itemId)"  class="fa fa-trash-o" aria-hidden="true"></i> </td>
+                  </tr>
+                 </tbody>
+               </table>
+              
+              </div>
+              </div>
+  
+  
+         
+    
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+ 
+  <style>
+    .h5 {
+      font-size: 18px;
+      font-weight: 600;
+      font-style: italic;
+    }
+  
+    .lblHeading {
+      font-size: 23px;
+      font-weight: 600;
+      font-style: italic;
+      text-decoration: underline;
+    }
+    .table th
+    {
+      font-size: 18px;
+      font-weight: 600;
+      font-style: italic;
+    }
+  </style>

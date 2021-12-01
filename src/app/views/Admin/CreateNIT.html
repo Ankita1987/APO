@@ -1,0 +1,230 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-align-justify"></i> <label class="h5">Create NIT</label>
+        </div>
+        <div class="card-body">
+          <div class="shadow-lg p-3 mb-5 bg-white rounded" id="cardhide4">
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="form-group">
+                  <input type="hidden" [(ngModel)]="rfpId" >
+                  <label class="h5" for="Consumtion">Consumtion Year </label>
+                  <select class="form-control" [(ngModel)]="consumptionYear">
+                    <option [ngValue]="item.consumptionYear" *ngFor="let item of consumptionYearDDL">
+                      {{item.consumptionYear}}
+                    </option>
+                  </select>
+                </div>
+              </div>
+       
+              <div class="col-sm-4">
+                <div class="form-group">
+                  <label class="h5" for="DP">DP Letter No & Date </label>
+                  <div class="controls">
+                    <div class="input-group">
+                      <select  class="form-control"  [(ngModel)]="dpLetterId" >
+                        <option>DP 1</option>
+                        <option>DP 2</option>
+                        <option>DP 3</option>
+                        <option>DP 4</option>
+                        <option>DP 5</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-group">
+                  <label class="h5" for="DP">Tender Cost (In Rs)
+                  </label>
+                  <input type="text"  [(ngModel)]="tenderCost"  class="form-control" placeholder="Enter Tender Cost (In Rs)
+                ">
+                </div>
+              </div>
+
+            </div>
+         
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="form-group">
+                  <label class="h5" for="RFP">RFP Number & Date </label>
+                  <input type="text"  [(ngModel)]="rfpNo"  class="form-control" placeholder="Enter RFP Number & Date
+                  ">
+                </div>
+              </div>
+              <div class="col-sm-2">
+                <div class="form-group">
+                  <label class="h5" for="RFP"> </label>
+                  <input type="date"  [(ngModel)]="rfpDate"  class="form-control" placeholder="Enter RFP Number & Date
+                  ">
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-group">
+                  <label class="h5" for="RFP"> Chairman PC </label>
+                  <input type="text"   [(ngModel)]="chairmanPC"  class="form-control" placeholder="Enter  Chairman PC
+                      ">
+                </div>
+              </div>
+              <div class="col-sm-2">
+                  <div class="form-group">
+                    <label class="h5" for="RFP">Upload NIT </label>
+                    <input type="file"    class="form-control" placeholder="Enter RFP Number & Date
+                    ">
+                  </div>
+                </div>
+            </div>
+               <div class="row">
+              <div class="col-sm-12">
+                <table class="table table-bordered table-striped">
+                  <thead>
+                    <tr>
+                      <th>Schedule</th>
+                      <th>Date</th>
+                      <th>Time</th>
+                    </tr>
+
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="font"> Published, Bid Document Download and Bid Submission Commencement Date
+                      </td>
+                      <td><input [(ngModel)]="bidSubmissionStartDate" type="date" class="form-control" placeholder="Enter Date"> </td>
+                      <td><input [(ngModel)]="bidSubmissionStartTime" type="date" class="form-control" placeholder="Enter Time"> </td>
+                    </tr>
+                    <tr>
+                      <td class="font">Clarification Start Date
+                      </td>
+                      <td> <input [(ngModel)]="clarificationStartDate" type="date"  class="form-control" placeholder="Enter Date"> </td>
+                      <td><input  [(ngModel)]="clarificationStartTime" type="date" class="form-control" placeholder="Enter Time"> </td>
+                    </tr>
+                    <tr>
+                      <td class="font">Clarification End Date
+                      </td>
+                      <td> <input [(ngModel)]="clarificationEndDate" type="date" class="form-control" placeholder="Enter Date"> </td>
+                      <td><input [(ngModel)]="clarificationEndTime" type="date" class="form-control" placeholder="Enter Time"> </td>
+                    </tr>
+                    <tr>
+                      <td class="font">Pre Bid Meeting</td>
+                      <td> <input [(ngModel)]="prebidMeetingDate" type="date" class="form-control" placeholder="Enter Date"> </td>
+                      <td><input [(ngModel)]="prebidMeetingTime" type="date" class="form-control" placeholder="Enter Time"> </td>
+                    </tr>
+                    <tr>
+                      <td class="font">Bid Submission End Date (Online)</td>
+                      <td> <input [(ngModel)]="bidSubmissionEndDate" type="date" class="form-control" placeholder="Enter Date"> </td>
+                      <td><input [(ngModel)]="bidSubmissionEndTime" type="date" class="form-control" placeholder="Enter Time"> </td>
+                    </tr>
+                    <tr>
+                      <td class="font">Physical Documents (as per Para 29(a) and 4 of RFP) Submission End Date
+                      </td>
+                      <td> <input [(ngModel)]="physicalDocsSubmissionEndDate" type="date" class="form-control" placeholder="Enter Date"> </td>
+                      <td><input [(ngModel)]="physicalDocsSubmissionEndTime"  type="date" class="form-control" placeholder="Enter Time"> </td>
+                    </tr>
+                    <tr>
+                      <td class="font">Bid Opening Start after (Online)
+                      </td>
+                      <td> <input  [(ngModel)]="bidOpeningStartDate" type="date" class="form-control" placeholder="Enter Date"> </td>
+                      <td><input [(ngModel)]="bidOpeningStartTime" type="date" class="form-control" placeholder="Enter Time"> </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-8">
+    
+                </div>
+                <div class="col-2">
+                  <label></label>
+                  <button type="button" *ngIf="add" (click)="addRFPNIT()"  class="btn btn-block btn-success">Add </button>
+                  <button type="button" *ngIf="update" (click)="updateRFPNIT()"  class="btn btn-block btn-success">Update </button>
+                </div>
+                 <div class="col-sm-2" >
+                  <label></label>
+                  <button (click)="clearModel()" type="button" class="btn btn-block btn-warning">Reset</button>
+                </div>
+              </div>
+
+              <br>
+
+              <div class="row">
+                  <div class="col-sm-12">
+                   <table class="table table-bordered table-striped">
+                     <thead>
+                       <tr>
+                         <th rowspan="2" >S/No</th>                       
+                         <th rowspan="2">Consumtion Year</th>                     
+                         <th rowspan="2">DP Letter No & Date </th>
+                         <th rowspan="2">Tender Cost (In Rs) </th>
+                         <th rowspan="2">RFP Number & Date </th>
+                         <th rowspan="2">Chairman PC </th>
+                         <th rowspan="2">View/Download NIT </th>
+                         <th rowspan="2">Actions </th>
+                         <th rowspan="2">View </th>
+                       </tr>
+                      
+                     </thead>
+                     <tbody>                                     
+                      
+                      
+
+                      <tr *ngFor="let sub of data">
+                        <td>{{sub.$id}}</td>
+                        <td>{{sub.consumptionYear}}</td>  
+                        <td>{{sub.dpLetterId}}</td>      
+                        <td>{{sub.tenderCost}}</td>      
+                        <td>{{sub.rfpNo}} <span>&</span> {{sub.rfpDate}} </td>      
+                        <td>{{sub.chairmanPC}}</td> 
+                        <td>    <i style="color: red;font-size: 22px"  class="fa fa-file-pdf-o" aria-hidden="true"></i> </td>                   
+                        
+                        <td><i style="color: #167495;font-size: 23px;" class="fa fa-pencil-square-o"
+                           aria-hidden="true"   (click)="editRFPNIT(sub.rfpId)"   ></i> <span>|</span> 
+                            <i style="color: red;font-size: 22px" (click)="removeRFPNIT(sub.rfpId)"  class="fa fa-trash-o" aria-hidden="true"></i> </td>
+
+
+                       <td>                             
+                        <i  (click)="viewNITDetails(sub.rfpId)" style="color:skyblue;font-size: 23px;" class="fa fa-eye" aria-hidden="true" ></i>     
+                       </td>
+                           
+                      </tr>
+                     </tbody>
+                   </table>
+                  
+                  </div>
+                  </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .font {
+    font-size: 17px;
+    font-style: italic;
+  }
+
+  .h5 {
+    font-size: 18px;
+    font-weight: 600;
+    font-style: italic;
+  }
+
+  .lblHeading {
+    font-size: 23px;
+    font-weight: 600;
+    font-style: italic;
+    text-decoration: underline;
+  }
+
+  .table th {
+    font-size: 18px;
+    font-weight: 600;
+    font-style: italic;
+  }
+</style>

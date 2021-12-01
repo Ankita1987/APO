@@ -1,0 +1,266 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-align-justify"></i> <label class="h5">Create AT NOTE </label>
+          <!-- <small>Form</small> -->
+        </div>
+        <div class="card-body">
+            <div class="shadow-lg p-3 mb-5 bg-white rounded" id="cardhide4">
+          <div class="row">
+            <div class="col-12"><label class="lblHeading"> Item Descriptions
+              </label></div>
+          </div>
+
+          <div class="row">
+            <input type="hidden"  [(ngModel)]="DPLetterId">
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label class="h5" for="ItemName">RFP No & Date <span style="color:red">*</span></label>
+                <select class="form-control" id="indtno" [(ngModel)]="rfpId" (change)="getRfpDetails()">
+                  <option  *ngFor="let rfp of rfpList"  value="{{rfp.rfpId}}" >{{rfp.rfpNo}}</option>
+                  
+                </select>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label class="h5" for="ItemName">Item Name<span style="color:red">*</span></label>
+                <input type="text" [(ngModel)]="itemName" class="form-control" placeholder="ItemName" disabled>
+                <!-- <select class="form-control">
+                  <option>Item 1</option>
+                  <option>Item 1</option>
+                  <option>Item 1</option>
+                  <option>Item 1</option>
+                </select> -->
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label class="h5" for="ItemName">Orignal DP FromDate<span style="color:red">*</span></label>
+                <input type=" date" [(ngModel)]="dpFDate" class="form-control" placeholder="" disabled>
+                <!-- <select class="form-control">
+                  <option>DP 1</option>
+                  <option>DP 1</option>
+                </select> -->
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label class="h5" for="ItemName">Orignal DP ToDate<span style="color:red">*</span></label>
+                <input type="date"  [(ngModel)]="dpToDate" class="form-control" placeholder="" disabled>
+                <!-- <select class="form-control">
+                  <option>DP 1</option>
+                  <option>DP 1</option>
+                </select> -->
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label class="h5" for="ItemName"> Qty
+                  (In MT)<span style="color:red">*</span></label>
+                  <input type="text"  [(ngModel)]="qty" class="form-control" placeholder="Qty" disabled>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="form-group">
+                <label class="h5" for="ItemName">Status<span style="color:red">*</span></label>
+                <select class="form-control" [(ngModel)]="status">
+                  <option value="0">Accept</option>
+                  <option value="1">Rejects</option>
+
+                </select>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="form-group">
+                <label class="h5" for="ItemName">Qty in AT Note
+                  <span style="color:red">*</span></label>
+
+                <input type="text" [(ngModel)]="atNoteQty" class="form-control" placeholder="Enter Qty in AT  Note(In MT)">
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label class="h5" for="ItemName"> DP FromDate in AT Note
+                  <span style="color:red">*</span></label>
+                <input type="date" [(ngModel)]="ATFromDate" class="form-control" placeholder="Enter  DP in AT Note">
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="form-group">
+                <label class="h5" for="ItemName"> DP To in AT Note
+                  <span style="color:red">*</span></label>
+                <input type="date" [(ngModel)]="AtToDate" class="form-control" placeholder="Enter  DP in AT Note">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12"><label class="lblHeading"> Rate Per MT (In Rs)</label></div>
+          </div>
+          <div class="row">
+
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label class="h5" for="ItemName">Basic Cost
+
+                  <span style="color:red">*</span></label>
+                <input type="text" [(ngModel)]="basiccost" (input)="onBasicCostChange($event.target.value)" class="form-control" placeholder="Enter  Basic Cost
+                ">
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label class="h5" for="ItemName"> GST/ Taxes
+
+                  <span style="color:red">*</span></label>
+                <input type="text" [(ngModel)]="gst" class="form-control" placeholder="Enter GST/ Taxes
+                ">
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label class="h5" for="ItemName"> Total Cost (Incl Taxes)
+                  <span style="color:red">*</span></label>
+                <input type="text"  [(ngModel)]="totalcost" class="form-control" placeholder="Enter  Total Cost (Incl Taxes)">
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label class="h5" for="ItemName"> Contract Value
+                  (In Rs)
+                  ((f) x (k))
+
+                  <span style="color:red">*</span></label>
+                <input type="text" [(ngModel)]="contractvalue" class="form-control" readonly>
+              </div>
+            </div>
+
+
+          </div>
+
+          <div class="row">
+            <div class="col-12"><label class="lblHeading"> Vendor Descriptions
+              </label></div>
+          </div>
+          <div class="row">
+
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label class="h5" for="ItemName">Name of L1 Vendor<span style="color:red">*</span></label>
+                <input type="text" [(ngModel)]="vendorName" class="form-control" readonly>
+                <input type="hidden" [(ngModel)]="VendorId">
+              </div>
+            </div>
+            <div class="col-sm-3" style="    margin-top: -1.5%;">
+              <div class="form-group">
+                <label class="h5" for="ItemName"> PBG Amt (10% of Contract Value)
+                  ((l) x 10%)
+                  <span style="color:red">*</span></label>
+                <input type="text" [(ngModel)]="pbgAmt" class="form-control" readonly>
+              </div>
+            </div>
+
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label class="h5" for="ItemName">Last date Submission of PBG
+
+                  <span style="color:red">*</span></label>
+
+                <input type="date" [(ngModel)]="PBGsubDate" class="form-control" placeholder="Enter Last date Submission of PBG">
+              </div>
+            </div>
+            <div class="col-sm-3" style="margin-top: -1.5%;">
+              <div class="form-group">
+               
+       
+              </div>
+              <div class="row">
+                  <div class="col DateColW">
+                      <label class="h5" for="AccUnit">PBG(From Date)
+                          <span style="color:red">*</span></label>    
+                    <input type="date" [(ngModel)]="PBGFromDate" class="form-control" id="FromDate" placeholder="Enter From Date  ">
+                  </div>
+                  <div class="col DateColW">
+                      <label class="h5" for="AccUnit">(To Date)
+                          <span style="color:red">*</span></label>    
+                    <input type="date" [(ngModel)]="PBGToDate" class="form-control" id="ToDate" placeholder="Enter To Date  ">
+                  </div>
+                </div>
+            </div>
+
+
+
+            
+          </div>
+
+          <div class="row">
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label class="h5" for="ItemName">AT Note No
+                    <span style="color:red">*</span></label>
+                <input type="text" [(ngModel)]="ATNoteNo" class="form-control" placeholder="Enter AT Note No
+                ">
+              </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                  <label class="h5" for="ItemName">Last UO No
+                      <span style="color:red">*</span></label>
+                  <input type="text" [(ngModel)]="LastUONo" class="form-control" placeholder="Enter UO No">
+                </div>
+              </div>
+              <div class="col-sm-3">
+                  <div class="form-group">
+                    <label class="h5" for="ItemName"> Upload Final AT <span style="color:red">*</span></label>
+                    <input type="file" class="form-control" >
+                  </div>
+                </div>
+                <div class="col-sm-1">
+                    <label class="h5" for="AWS">Vetted</label> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                    <label style="padding-top: 7%;" class="switch switch-3d switch-success">
+                      <input type="checkbox" class="form-control switch-input" checked>
+                      <span class="switch-slider"></span> </label>
+                </div>
+                <div class="col-sm-2" style=" padding-top: 0.5%;">
+                    <label></label>
+                    <button type="button" class="btn btn-block btn-success" (click)="createATNote()">Add</button>
+                  </div>
+          </div>
+          <br>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+   .h5 {
+      font-size: 18px;
+      font-weight: 600;
+      font-style: italic;
+    }
+  
+    .lblHeading {
+      font-size: 23px;
+      font-weight: 600;
+      font-style: italic;
+      text-decoration: underline;
+    }
+    .table th
+    {
+      font-size: 18px;
+      font-weight: 600;
+      font-style: italic;
+    }
+    
+  .DateColW {
+      width: 32%;
+    }
+</style>

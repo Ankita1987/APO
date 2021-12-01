@@ -1,0 +1,329 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-align-justify"></i> <label class="h5">Add Vendor Certificate Details </label>
+        </div>
+        <div class="card-body">
+          <div class="shadow-lg p-3 mb-5 bg-white rounded" id="cardhide4">
+
+            <div class="row">
+
+
+
+
+              <input type="hidden" [(ngModel)]="vendorId">
+              <input type="hidden" [(ngModel)]="vendorCertificationId">
+
+              <div class="col-sm-4" style="margin-top: -2%">
+                <label class="h5"> Registration Validity with APO</label>
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col DateColW">
+                      <label class="h5" for="AccUnit"> Validity (From )
+                        <span style="color:red">*</span></label>
+                      <input type="date" class="form-control" [(ngModel)]="registrationValidityWithAPOFromDate"
+                        placeholder="Enter From Date  ">
+                    </div>
+                    <div class="col DateColW">
+                      <label class="h5" for="AccUnit"> Validity (To )
+                        <span style="color:red">*</span></label>
+                      <input type="date" class="form-control" [(ngModel)]="registrationValidityWithAPOToDate"
+                        placeholder="Enter To Date  ">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+
+            <div class="row">
+              <div class="col-12"><label class="lblHeading">FSSAI Details</label></div>
+            </div>
+            <div class="row">
+
+              <div class="col-sm-4">
+                <div class="form-group">
+                  <label class="h5" for="SanctionedQty">Production Capacity Per Month as Per FSSAI<span
+                      style="color:red">*</span></label>
+                  <input type="text" class="form-control" [(ngModel)]="productionCapacityPerMonthAsPerFSSAI"
+                    placeholder="Enter Production Capacity Per Month as Per FSSAI">
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-group">
+                  <label class="h5" for="Estimated"> Certificate No.
+                    <span style="color:red">*</span></label>
+                  <input type="text" class="form-control" [(ngModel)]="fssaiCertificateNumber"
+                    placeholder="Enter FSSAI Certificate No. ">
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col DateColW">
+                      <label class="h5" for="AccUnit"> Validity (From )
+                        <span style="color:red">*</span></label>
+                      <input type="date" class="form-control" [(ngModel)]="validityOfFSSAICertificateFromDate"
+                        placeholder="Enter From Date  ">
+                    </div>
+                    <div class="col DateColW">
+                      <label class="h5" for="AccUnit"> Validity (To )
+                        <span style="color:red">*</span></label>
+                      <input type="date" class="form-control" [(ngModel)]="validityOfFSSAICertificateToDate"
+                        placeholder="Enter To Date  ">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12"><label class="lblHeading">HACCP Details</label></div>
+            </div>
+            <div class="row">
+
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label class="h5" for="FirmName">ISO 22000-2005/HACCP Certificate No.
+
+                    <span style="color:red">*</span></label>
+                  <input type="text" class="form-control" [(ngModel)]="isohaccpCertificateNumber" placeholder="Enter ISO 22000-2005/ HACCP Certificate Number
+          ">
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-group">
+
+                  <div class="row">
+                    <div class="col DateColW">
+                      <label class="h5" for="AccUnit"> Validity (From )
+                        <span style="color:red">*</span></label>
+                      <input type="date" class="form-control" [(ngModel)]="validityOfISOHACCPCertificateNumberFromDate"
+                        placeholder="Enter From Date  ">
+                    </div>
+                    <div class="col DateColW">
+                      <label class="h5" for="AccUnit"> Validity (To )
+                        <span style="color:red">*</span></label>
+                      <input type="date" class="form-control" [(ngModel)]="validityOfISOHACCPCertificateNumberToDate"
+                        placeholder="Enter To Date  ">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12"><label class="lblHeading">Technical Inspection Details</label></div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label class="h5" for="FirmName"> Report
+                    <span style="color:red">*</span></label>
+                  <input type="text" class="form-control" [(ngModel)]="technicalInspectionReport"
+                    placeholder="EnterTechnical Inspection Report   ">
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-group">
+
+                  <div class="row">
+                    <div class="col DateColW">
+                      <label class="h5" for="AccUnit"> Validity( From )
+                        <span style="color:red">*</span></label>
+                      <input type="date" class="form-control" [(ngModel)]="validityOfTechnicalInspectionReportFromDate"
+                        placeholder="Enter From Date  ">
+                    </div>
+                    <div class="col DateColW">
+                      <label class="h5" for="AccUnit"> Validity (To )
+                        <span style="color:red">*</span></label>
+                      <input type="date" class="form-control" [(ngModel)]="validityOfTechnicalInspectionReportToDate"
+                        placeholder="Enter To Date  ">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="row">
+              <div class="col-12"><label class="lblHeading">Hygiene Inspection Details</label></div>
+            </div>
+            <div class="row">
+
+
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label class="h5" for="FirmName"> Report
+
+                    <span style="color:red">*</span></label>
+                  <input type="text" class="form-control" [(ngModel)]="hygieneInspectionReport" placeholder="Enter Hygiene Inspection Report
+          ">
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-group">
+
+
+
+                  <div class="row">
+                    <div class="col  DateColW">
+                      <label class="h5" for="AccUnit"> Validity (From)
+                        <span style="color:red">*</span></label>
+                      <input type="date" class="form-control" [(ngModel)]="validityOfHygieneInspectionReportFromDate"
+                        placeholder="Enter From Date  ">
+                    </div>
+                    <div class="col DateColW">
+                      <label class="h5" for="AccUnit"> Validity (To)
+                        <span style="color:red">*</span></label>
+                      <input type="date" class="form-control" [(ngModel)]="validityOfHygieneInspectionReportToDate"
+                        placeholder="Enter To Date  ">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="row">
+              <div class="col-12"><label class="lblHeading">Trade Mark Details</label></div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label class="h5" for="FirmName">Certificate No.
+
+
+                  </label>
+                  <input type="text" class="form-control" [(ngModel)]="tradeMarkCertificateNumber" placeholder="Enter Trade Mark Certificate  No.
+    
+          ">
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-group">
+
+                </div>
+                <div class="row">
+                  <div class="col DateColW">
+                    <label class="h5" for="AccUnit"> Validity( From)
+                      </label>
+                    <input type="date" class="form-control" [(ngModel)]="validityOfTradeMarkCertificateNumberFromDate"
+                      placeholder="Enter From Date  ">
+                  </div>
+                  <div class="col DateColW">
+                    <label class="h5" for="AccUnit"> Validity( To)
+                      </label>
+                    <input type="date" class="form-control" [(ngModel)]="validityOfTradeMarkCertificateNumberToDate"
+                      placeholder="Enter To Date  ">
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+
+
+
+
+            <div class="row">
+              <div class="col-2">
+                <label></label>
+                <button type="button" *ngIf="add" (click)="addVendorCertificate()" class="btn btn-block btn-success">Add
+                </button>
+                <button type="button" *ngIf="update" (click)="updateVendorCertificate()"
+                  class="btn btn-block btn-success">Update </button>
+              </div>
+              <div class="col-sm-2">
+                <label></label>
+                <button (click)="clearModel()" type="button" class="btn btn-block btn-warning">Reset</button>
+              </div>
+            </div>
+            <br>
+
+            <div class="row">
+              <div class="col-sm-12" style="overflow-x: auto;" >
+                <table class="table table-bordered table-striped">
+                  <thead>
+                    <tr>
+                      <th rowspan="2">S/No</th>
+                      <th rowspan="2">Registration Validity with APO</th>
+                      <th rowspan="2">FSSAI Details</th>
+                      <th rowspan="2">HACCP Details </th>
+                      <th rowspan="2">Technical Inspection Details </th>
+                      <th rowspan="2">Hygiene Inspection Details </th>
+                      <th rowspan="2">Trade Mark Details </th>
+
+                      <th rowspan="2">Actions </th>
+
+                    </tr>                   
+                  </thead>
+                  <tbody>
+                                    <tr *ngFor="let sub of data">
+                  <td>{{sub.$id}}</td>
+                  <td> <b>From: </b>  {{sub.registrationValidityWithAPOFromDate}} <br><b>To:</b> {{sub.registrationValidityWithAPOToDate}}</td>               
+                  <td> <b>Production Capacity Per Month as Per FSSAI : </b> {{sub.productionCapacityPerMonthAsPerFSSAI}}
+                 <br><b>Certificate No: </b> {{sub.fssaiCertificateNumber}}  
+                 <br><b>From:</b>   {{sub.validityOfFSSAICertificateFromDate}}
+                   <br><b>To:</b>   {{sub.validityOfFSSAICertificateToDate}}</td>
+
+                  <td> <b>ISO 22000-2005/HACCP Certificate No : </b> {{sub.isohaccpCertificateNumber}}
+                    <br><b>From:</b>    {{sub.validityOfISOHACCPCertificateNumberFromDate}}
+                    <br><b>To:</b>  {{sub.validityOfISOHACCPCertificateNumberToDate}}</td>
+                  
+                  
+                  <td> <b> Report : </b> {{sub.technicalInspectionReport}}
+
+                    <br><b>From:</b> {{sub.validityOfTechnicalInspectionReportFromDate}}
+                  
+                    <br><b>To:</b>  {{sub.validityOfTechnicalInspectionReportToDate}}
+                
+                </td>
+                  <td> <b> Report : </b> {{sub.hygieneInspectionReport}}
+                    <br><b>From:</b> {{sub.validityOfHygieneInspectionReportFromDate}}
+                    <br><b>To:</b>  {{sub.validityOfHygieneInspectionReportToDate}}</td>
+                 
+
+                  <td> <b> Certificate No. : </b> {{sub.tradeMarkCertificateNumber}}
+                    <br><b>From:</b>{{sub.validityOfTradeMarkCertificateNumberFromDate}}
+                    <br><b>To:</b>     {{sub.validityOfTradeMarkCertificateNumberToDate}}</td>
+                 
+                  <td><i style="color: #167495;font-size: 23px;" class="fa fa-pencil-square-o"
+                     aria-hidden="true"   (click)="editVendorCertificate(sub.vendorCertificationId)"   ></i> <span>|</span> 
+                      <i style="color: red;font-size: 22px" (click)="removeVendorCertificate(sub.vendorCertificationId)"  class="fa fa-trash-o" aria-hidden="true"></i> </td>
+                  
+                </tr> 
+                  </tbody>
+                </table>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <style>
+    .DateColW {
+      width: 32%;
+    }
+
+    .h5 {
+      font-size: 18px;
+      font-weight: 600;
+      font-style: italic;
+    }
+
+    .lblHeading {
+      font-size: 23px;
+      font-weight: 600;
+      font-style: italic;
+      text-decoration: underline;
+    }
+
+    .table th {
+      font-size: 18px;
+      font-weight: 600;
+      font-style: italic;
+    }
+  </style>

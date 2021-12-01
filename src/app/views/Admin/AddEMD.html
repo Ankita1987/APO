@@ -1,0 +1,193 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-align-justify"></i> <label class="h5">Add EMD </label>          
+        </div>
+        <div class="card-body">
+            <div class="shadow-lg p-3 mb-5 bg-white rounded" id="cardhide4">
+          <div class="row">
+             
+           
+              
+            <div class="col-sm-4">
+              <div class="form-group">
+                <input type="hidden" [(ngModel)]="emdId"     >
+                <label class="h5" for="ItemName">RFP No & Date <span style="color:red">*</span></label>
+                <select class="form-control" [(ngModel)]="rfpId">
+                    <option [ngValue]="item.rfpId" *ngFor="let item of rfpData">
+                        {{item.rfpNo}} <span>&</span> {{item.rfpDate}}
+                    </option>
+                  </select>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label class="h5" for="ItemName">Name Of Firm <span style="color:red">*</span></label>
+                <select class="form-control" [(ngModel)]="vendorId"  (change)="getVendorDetails(vendorId)"    >
+                    <option [ngValue]="item.vendorId" *ngFor="let item of vendorData">
+                         {{item.nameOfFirm}}
+                    </option>
+                  </select>
+              </div>
+            </div>
+          
+            <div class="col-sm-2">
+              <div class="form-group">                
+                <label class="h5" for="User">Type Of Firm </label>           
+                <label class="form-control" >{{vendorDetails.isRegisterVal}}</label>
+               
+              </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="form-group">
+                  <label class="h5" for="User">Tender Fee </label>
+                  <!-- <select class="form-control" [(ngModel)]="tenderFee" >
+                      <option [ngValue]="true">Yes</option>
+                      <option [ngValue]="false">No</option>
+                    </select>    -->
+                    <input type="text" class="form-control "   [(ngModel)]="tenderFee" placeholder="Enter Tendor Fee">            
+                </div>
+              </div>
+          </div>
+          <div class="row">
+
+            <div class="col-sm-2">
+              <div class="form-group">
+                <label class="h5" for="User">EMD Applicable </label>
+                <select class="form-control" [(ngModel)]="emdApplicable">
+                    <option [ngValue]="true">Yes</option>
+                    <option [ngValue]="false">No</option>
+                  </select>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label class="h5" for="User">EMD Amount Recd</label>
+                <input type="text" class="form-control "   [(ngModel)]="emdAmountRecd" placeholder="Enter EMD Amount Recd">
+              </div>
+            </div>
+
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label class="h5" for="User">FDR/ BG NUMBER</label>
+                <input type="text" class="form-control" [(ngModel)]="fdrbgNumber" placeholder="Enter FDR/ BG NUMBER ">
+              </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="form-group">
+                  <label class="h5" for="User">Validity (From)
+  
+                  </label>
+                  <input type="date" class="form-control" [(ngModel)]="validityOFFDRBGFromDate" placeholder="Enter FDR/ BG NUMBER ">
+                </div>
+              </div>
+              <div class="col-sm-2">
+                  <div class="form-group">
+                    <label class="h5" for="User">(To)</label>
+                    <input type="date" class="form-control" [(ngModel)]="validityOFFDRBGToDate" placeholder="Enter FDR/ BG NUMBER ">
+                  </div>
+                </div>           
+          </div>
+          <div class="row">
+              <div class="col-2" style="margin-top: 0.5%" >
+                  <label></label>
+                  <button type="button" *ngIf="add" (click)="addEMD()"  class="btn btn-block btn-success">Add </button>
+                  <button type="button" *ngIf="update" (click)="updateEMD()"  class="btn btn-block btn-success">Update </button>
+                </div>
+                <div class="col-sm-2" style="margin-top: 0.5%"  >
+                  <label></label>
+                  <button (click)="clearModel()" type="button" class="btn btn-block btn-warning">Reset</button>
+                </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-sm-12">
+              <table class="table table-bordered table-striped">
+                <thead>
+                  <tr>
+                    <th  rowspan="2">S/No</th>
+                   <th rowspan="2">RFP No & Date </th>
+                   <th rowspan="2">Name Of Firm</th>
+                   <th rowspan="2">Type Of Firm</th>
+                   <th rowspan="2">Tender Fee</th>                
+                   <th rowspan="2">EMD Applicable</th>
+                   <th rowspan="2">EMD Amount Recd</th>
+                   <th colspan="3" >   FDR/ BG Details</th>                   
+                   <th rowspan="2">Actions</th>
+                   <th rowspan="2">Varify</th>
+                  </tr>
+                  <tr>
+  <th>Number </th><th>From Date</th>
+  <th> To Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                
+                    <tr *ngFor="let sub of data">
+                        <td>{{sub.$id}}</td>
+                        <td>{{sub.rfpNo}}  <span>&</span> {{sub.rfpDate}}</td>  
+                        <td>{{sub.nameOfFirm}}</td>      
+                     
+                        <td>{{sub.isRegisterVal}}  </td>      
+                        <td>{{sub.tenderFee}}</td>  
+                        <td>{{sub.emdApplicableVal}}</td> 
+                        <td>{{sub.emdAmountRecd}}</td> 
+                        <td>{{sub.fdrbgNumber}}</td> 
+                        <td>{{sub.validityOFFDRBGFromDate}}</td> 
+                        <td>{{sub.validityOFFDRBGToDate}}</td> 
+                        <td><i style="color: #167495;font-size: 23px;" class="fa fa-pencil-square-o"
+                          aria-hidden="true"   (click)="editEMD(sub.emdId)"   ></i> <span>|</span> 
+                          <i style="color: red;font-size: 22px" (click)="removeEMD(sub.emdId)"  class="fa fa-trash-o" aria-hidden="true"></i> </td>
+                           
+                           
+                        <td><i style="color:#00c851;font-size: 20px" class="fa fa-check" aria-hidden="true"></i> <span> |
+                          </span><i style="color: #ff4444;font-size: 20px" class="fa fa-times" aria-hidden="true"></i> </td>
+                    </tr>
+                
+                </tbody>
+              </table>
+              <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                <li class="page-item active">
+                  <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+.h5 {
+      font-size:18px;
+      font-weight: 600;
+      font-style: italic;
+    }
+  
+    .lblHeading {
+      font-size: 23px;
+      font-weight: 600;
+      font-style: italic;
+      text-decoration: underline;
+    }
+    .table th
+    {
+      font-size: 18px;
+      font-weight: 600;
+      font-style: italic;
+    }
+  .DateColW {
+      width: 32%;
+    }
+
+</style>

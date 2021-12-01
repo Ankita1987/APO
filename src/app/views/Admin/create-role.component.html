@@ -1,0 +1,52 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-align-justify"></i> <label class="h5">Create Role</label>
+          <!-- <small>Form</small> -->
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label class="h5" for="ItemName">Role Name<span style="color:red">*</span></label>
+                <input type="text" class="form-control" 
+                
+                [(ngModel)]="Name" placeholder="Enter Role Name ">
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label class="h5" for="ItemType">Description<span style="color:red">*</span></label>
+                <input [(ngModel)]="Description" type="text" class="form-control" id="ItemType" placeholder="Enter Description">
+              </div>
+            </div>
+           
+           
+          </div>
+          <div class="row">
+            <div class="col-sm-2">
+            <label></label>
+            <button (click)="createRole()" type="button" class="btn btn-block btn-success">Add</button>
+          </div>
+          <div class="col-sm-2" >
+            <label></label>
+            <button (click)="clearModel()" type="button" class="btn btn-block btn-warning">Reset</button>
+          </div>
+         </div>
+         <br>
+       
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+
+    .h5{
+       font-weight: bold;
+     font-size: 15px;
+     }
+   </style>
+ 

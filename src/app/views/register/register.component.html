@@ -1,0 +1,133 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-align-justify"></i> <label class="h5">User Registration</label>
+          <!-- <small>Form</small> -->
+          <small>{{this.data}}</small>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label class="h5" for="ItemName">UserName<span style="color:red">*</span></label>
+                <input type="text" class="form-control" 
+                
+                [(ngModel)]="UserName" placeholder="Enter UserName Name ">
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label class="h5" for="ItemType">Email<span style="color:red">*</span></label>
+                <input [(ngModel)]="Email" type="text" class="form-control" id="ItemType" placeholder="Enter Email Address">
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label class="h5" for="ItemType">PersonnelNumber<span style="color:red">*</span></label>
+                <input [(ngModel)]="PersonnelNumber" type="text" class="form-control" id="ItemType" placeholder="Enter PersonnelNumber">
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label class="h5" for="ItemType">FullName<span style="color:red">*</span></label>
+                <input [(ngModel)]="FullName" type="text" class="form-control" id="ItemType" placeholder="Enter FullName">
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label class="h5" for="ItemType">EstablishmentFull<span style="color:red">*</span></label>
+                <input [(ngModel)]="EstablishmentFull" type="text" class="form-control" id="ItemType" placeholder="Enter EstablishmentFull">
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label class="h5" for="ItemType">EstablishmentAbbreviation<span style="color:red">*</span></label>
+                <input [(ngModel)]="EstablishmentAbbreviation" type="text" class="form-control" id="ItemType" placeholder="Enter EstablishmentAbbreviation">
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label class="h5" for="ItemType">Password<span style="color:red">*</span></label>
+                <input [(ngModel)]="Password" type="text" class="form-control" id="ItemType" placeholder="Enter Password">
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label class="h5" for="ItemType">Appointment<span style="color:red">*</span></label>
+                <input [(ngModel)]="Appointment" type="text" class="form-control" id="ItemType" placeholder="Enter Appointment">
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label class="h5" for="ItemType">ASCON Number<span style="color:red">*</span></label>
+                <input [(ngModel)]="ASCON" type="text" class="form-control" id="ItemType" placeholder="Enter ASCON Number">
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label class="h5"  for="User">Role</label>
+                <div class="controls">
+                  <div class="input-group" >
+                      <select [(ngModel)]="Role"  class="form-control" id="ItemForUser" multiple>
+                          <option *ngFor="let role of roles"  value="">{{role.roleName}}</option>
+                        </select>
+                
+                  </div>
+                </div>
+              </div>
+             </div> 
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label class="h5"  for="User">Rank</label>
+                <div class="controls">
+                  <div class="input-group">
+                      <select [(ngModel)]="Rank" class="form-control" id="ItemForUser">
+                          <option>Purchase 1</option>
+                          <option>Purchase 2</option>
+                          <option>Purchase 3</option>
+                          <option>Purchase 4</option>
+                          <option>Purchase 5</option>
+                          
+                        </select>
+                    <!-- <span class="input-group-append">
+                      <button class="btn btn-secondary" type="button">Search!</button>
+                    </span> -->
+                  </div>
+                </div>
+              </div>
+             </div> 
+             <div class="col-sm-4">
+              <div class="form-group">
+                <label class="h5" for="ItemType">PhoneNumber<span style="color:red">*</span></label>
+                <input [(ngModel)]="PhoneNumber" type="text" class="form-control" id="ItemType" placeholder="Enter PhoneNumber">
+              </div>
+            </div>
+       
+          </div>
+          <div class="row">
+            <div class="col-sm-2">
+            <label></label>
+            <button (click)="setValue()" type="button" class="btn btn-block btn-success">Add</button>
+          </div>
+          <div class="col-sm-2" >
+            <label></label>
+            <button (click)="clearModel()" type="button" class="btn btn-block btn-warning">Reset</button>
+          </div>
+         </div>
+         <br>
+       
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+
+    .h5{
+       font-weight: bold;
+     font-size: 15px;
+     }
+   </style>
+ 

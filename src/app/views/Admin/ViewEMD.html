@@ -1,0 +1,121 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-align-justify"></i> <label class="h5">  DETAILS OF EMD RECD AGAINT THE RFP NO  </label>          
+        </div>
+        <div class="card-body">
+            <div class="shadow-lg p-3 mb-5 bg-white rounded" id="cardhide4">
+          <br>
+          <div class="row">
+            <div class="col-sm-12">
+              <table class="table table-bordered table-striped">
+                <thead>
+                  <tr>
+                    <th rowspan="2">S/No</th>
+                    <th rowspan="2">RFP No & Date </th>
+                    <th rowspan="2">Name Of Firm</th>                   
+                    <th rowspan="2">Type Of Firm</th>
+                    <th rowspan="2">Tender Fee</th>
+                    <th rowspan="2">EMD Applicable</th>
+                    <th rowspan="2">EMD Amount Recd</th>
+                    <th colspan="3">                     
+                      FDR/ BG Details </th>
+                  
+                    <th rowspan="2">
+                      EMD Released/ Forfeited
+
+                    </th>
+                    <th colspan="2"> Release</th>
+                    <th colspan="2"> Forfeit</th>                   
+                    <th  colspan="2">EMD Letters
+                    </th>
+                  </tr>
+
+                  <tr>
+                      <th> Number</th>
+                      <th> From </th>
+                      <th> To</th>
+                   <th>Date</th>
+                   <th>Reason</th>
+                   <th>Date</th>
+                   <th>Reason</th>
+                   <th>Release</th>
+                   <th>Forfeit</th>
+
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <tr *ngFor="let sub of data">
+                      <td>{{sub.$id}}</td>
+                      <td>{{sub.rfpNo}}  <span>&</span> {{sub.rfpDate}}</td>  
+                      <td>{{sub.nameOfFirm}}</td>      
+                   
+                      <td>{{sub.isRegisterVal}}  </td>      
+                      <td>{{sub.tenderFee}}</td>  
+                      <td>{{sub.emdApplicableVal}}</td> 
+                      <td>{{sub.emdAmountRecd}}</td> 
+                      <td>{{sub.fdrbgNumber}}</td> 
+                      <td>{{sub.validityOFFDRBGFromDate}}</td> 
+
+                     <td>{{sub.validityOFFDRBGToDate}}</td>
+                     <td><input type="button"  (click)="releaseForFeitOFEMD(sub.emdId)" class="btn btn-link" value="Released/Forfeit" ></td>
+                     <td>{{sub.releaseEMDDate}}  </td>                   
+                     
+                     <td>{{sub.reasonReleaseEMD}}</td>
+
+                     <td>{{sub.forfeitEMDDate}} </td>                   
+                     
+                     <td>{{sub.reasonForfeitEMD}}</td>
+
+                     <td> 
+                        <i style="color: red;font-size: 22px"  class="fa fa-file-pdf-o" aria-hidden="true"></i>
+                       </td>
+                     <td><i style="color: red;font-size: 22px"  class="fa fa-file-pdf-o" aria-hidden="true"></i></td>
+                  </tr>
+
+                </tbody>
+              </table>
+              <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                <li class="page-item active">
+                  <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .h5 {
+      font-size: 18px;
+      font-weight: 600;
+      font-style: italic;
+    }
+  
+    .lblHeading {
+      font-size: 23px;
+      font-weight: 600;
+      font-style: italic;
+      text-decoration: underline;
+    }
+    .table th
+    {
+      font-size: 18px;
+      font-weight: 600;
+      font-style: italic;
+    }
+  .DateColW {
+    width: 32%;
+  }
+</style>

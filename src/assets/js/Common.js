@@ -1,0 +1,5 @@
+
+function Cols()
+{
+    alert("ok");
+}

@@ -1,0 +1,85 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-align-justify"></i> <label class="h5">List of NIT</label>          
+        </div>
+        <div class="card-body">
+            <div class="shadow-lg p-3 mb-5 bg-white rounded" id="cardhide4">
+                <br>
+
+                <div class="row">
+                    <div class="col-sm-12">
+                     <table class="table table-bordered table-striped">
+                       <thead>
+                         <tr>
+                           <th rowspan="2" >S/No</th>                       
+                           <th rowspan="2">Consumtion Year</th>                     
+                           <th rowspan="2">DP Letter No & Date </th>
+                           <th rowspan="2">Tender Cost (In Rs) </th>
+                           <th rowspan="2">RFP Number & Date </th>
+                           <th rowspan="2">Chairman PC </th>
+                           <th rowspan="2">View/Download NIT </th>
+                           
+                           <th rowspan="2">View </th>
+                           <th rowspan="2">Generate RFP </th>
+                         </tr>
+                        
+                       </thead>
+                       <tbody>                                     
+                        
+                        
+  
+                        <tr *ngFor="let sub of data">
+                          <td>{{sub.$id}}</td>
+                          <td>{{sub.consumptionYear}}</td>  
+                          <td>{{sub.dpLetterId}}</td>      
+                          <td>{{sub.tenderCost}}</td>      
+                          <td>{{sub.rfpNo}} <span>&</span> {{sub.rfpDate}} </td>      
+                          <td>{{sub.chairmanPC}}</td> 
+                          <td>    <i style="color: red;font-size: 22px"  class="fa fa-file-pdf-o" aria-hidden="true"></i> </td>                   
+                          
+                         
+  
+                         <td>                             
+                          <i  (click)="viewNITDetails(sub.rfpId)" style="color:#1C2331;font-size: 23px;" class="fa fa-eye" aria-hidden="true" ></i>     
+                         </td>
+                         <td>    <i style="color:#0099CC;font-size: 22px"  class="fa fa-file" aria-hidden="true"></i> </td>                   
+                        </tr>
+                       </tbody>
+                     </table>
+                    
+                    </div>
+                    </div>
+      
+
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+
+.h5 {
+      font-size: 18px;
+      font-weight: 600;
+      font-style: italic;
+    }
+  
+    .lblHeading {
+      font-size: 23px;
+      font-weight: 600;
+      font-style: italic;
+      text-decoration: underline;
+    }
+    .table th
+    {
+      font-size: 18px;
+      font-weight: 600;
+      font-style: italic;
+    }
+   </style>
+ 

@@ -1,0 +1,114 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-align-justify"></i> <label class="h5">TEC Summary</label>
+          <!-- <small>Form</small> -->
+        </div>
+        <div class="card-body">
+
+            <div class="shadow-lg p-3 mb-5 bg-white rounded" id="cardhide4">
+            <div class="row">
+                <div class="col-sm-4">
+                  <div class="form-group">
+                    <label class="h5" for="RoleName">CONSUMTION YEAR (CY) <span style="color:red">*</span></label>
+                    <select class="form-control" [(ngModel)]="consumptionYear" (change)="getRFPForTEC(consumptionYear)"  >
+                        <option [ngValue]="item.consumptionYear" *ngFor="let item of consumptionYearDDL">
+                          {{item.consumptionYear}}
+                        </option>
+                      </select>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                      <label class="h5" for="RoleName">RFP No. & Date <span style="color:red">*</span></label>
+                      <select class="form-control" [(ngModel)]="rfpId"  (change)="getVendorForTEC(rfpId)"   >
+                          <option [ngValue]="item.rfpId" *ngFor="let item of data">
+                            {{item.rfpNo}} <span>&</span> {{item.rfpDate}}
+                          </option>
+                        </select>
+                    </div>
+                  </div>
+                <div class="col-sm-2">
+                  <label></label>
+                  <button type="button" class="btn btn-block btn-info">Search</button>
+                </div>
+              </div>
+         <br>
+          <div class="row">
+              <div class="col-sm-12">
+               <table class="table table-bordered table-striped">
+                 <thead>
+                   <tr>
+                     <th rowspan="2" >S/No</th>                   
+                     <th rowspan="2">Namae Of Firm</th>
+                     <th rowspan="2">Accept/Reject </th>
+                     <th rowspan="2">Remarks </th>                  
+                   </tr>                  
+                 </thead>
+                 <tbody>  
+                   
+                  <tr *ngFor="let sub of vendorData" >
+                      <td>{{sub.$id}}</td>
+                      <td>{{sub.nameOfFirm}}</td>  
+                      <td>
+                          <select class="form-control"   >
+                              <option>Accepted</option>
+                              <option>Rejected</option>
+                            </select>
+                       </td>
+                      <td> <input type="text"  class="form-control" placeholder="Enter Remarks...." > </td>  
+                  </tr>
+               
+                 </tbody>              
+               </table>
+               <div class="row">
+                 <div class="col-sm-10"></div>
+                  <div class=" col-sm-2 pull-right">
+                      <label></label>
+                      <button type="button" class="btn btn-block btn-success">Update</button>
+                    </div>
+               </div>
+               <br>
+               <ul class="pagination">
+                   <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                   <li class="page-item active">
+                     <a class="page-link" href="#">1</a>
+                   </li>
+                   <li class="page-item"><a class="page-link" href="#">2</a></li>
+                   <li class="page-item"><a class="page-link" href="#">3</a></li>
+                   <li class="page-item"><a class="page-link" href="#">4</a></li>
+                   <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                 </ul>
+              </div>
+              </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+
+.h5 {
+      font-size: 18px;
+      font-weight: 600;
+      font-style: italic;
+    }
+  
+    .lblHeading {
+      font-size: 23px;
+      font-weight: 600;
+      font-style: italic;
+      text-decoration: underline;
+    }
+    .table th
+    {
+      font-size: 18px;
+      font-weight: 600;
+      font-style: italic;
+    }
+   </style>
+ 

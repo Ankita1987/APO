@@ -1,0 +1,134 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-align-justify"></i> <label class="h5">View NIT</label>
+
+        </div>
+        <div class="card-body">
+            <div class="shadow-lg p-3 mb-5 bg-white rounded" id="cardhide4">
+            <div class="row">
+                <div class="col-sm-12">
+                  <table class="table table-bordered table-striped">
+                    <tbody>
+                      <tr>
+                      
+                       
+
+                        <td><b>Consumtion Year</b></td>
+                        <td>{{data.consumptionYear}}</td>
+                        <td><b>RFP Number & Date</b></td>
+                        <td>{{data.rfpNo}} <span>& </span> {{data.rfpDate}}  </td>
+                        <td><b>Tender Cost (In Rs)</b></td>
+                        <td>{{data.consumptionYear}} </td>
+                      </tr>
+                      <tr>
+                          <td><b>DP Number & Date</b></td>
+                          <td>{{data.dpLetterId}} <span>& </span> {{data.dpLetterId}}  </td>
+                          <td><b>Chairman PC</b></td>
+                          <td>{{data.chairmanPC}} </td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                       
+                    </tbody>
+                  </table></div></div>
+                   
+
+          <div class="row">
+            <div class="col-sm-12">
+              <table class="table table-bordered table-striped">
+               
+                <thead>
+                  <tr>
+                    <th>Schedule</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                  </tr>
+                
+                
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="font"> Published, Bid Document Download and Bid Submission Commencement Date
+                    </td>
+                    <td>{{data.bidSubmissionStartDate}} </td>
+                    <td>{{data.bidSubmissionStartTime}} </td>
+                  </tr>
+                  <tr>
+                    <td class="font">Clarification Start Date
+                    </td>
+                    <td>{{data.clarificationStartDate}} </td>
+                    <td>{{data.clarificationStartTime}} </td>
+                  </tr>
+                  <tr>
+                    <td class="font">Clarification End Date
+                    </td>
+                    <td>{{data.clarificationEndDate}} </td>
+                    <td>{{data.clarificationEndTime}} </td>
+                  </tr>
+                
+                  <tr>
+                    <td class="font">Pre Bid Meeting</td>
+                    <td>{{data.prebidMeetingDate}} </td>
+                    <td>{{data.prebidMeetingTime}} </td>
+                  </tr>
+                  <tr>
+                    <td class="font">Bid Submission End Date (Online)</td>
+                    <td>{{data.bidSubmissionEndDate}} </td>
+                    <td>{{data.bidSubmissionEndTime}} </td>
+                  </tr>
+                  <tr>
+                    <td class="font">Physical Documents (as per Para 29(a) and 4 of RFP) Submission End Date
+                    </td>
+                    <td>{{data.physicalDocsSubmissionEndDate}} </td>
+                    <td>{{data.physicalDocsSubmissionEndTime}} </td>
+                    
+                  </tr>
+                  <tr>
+                    <td class="font">Bid Opening Start after (Online)
+                    </td>
+                    <td>{{data.bidOpeningStartDate}} </td>
+                    <td>{{data.bidOpeningStartTime}} </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .font {
+    font-size: 17px;
+    font-style: italic;
+  }
+  .h5 {
+      font-size: 18px;
+      font-weight: 600;
+      font-style: italic;
+    }
+  
+    .lblHeading {
+      font-size: 23px;
+      font-weight: 600;
+      font-style: italic;
+      text-decoration: underline;
+    }
+    .table th
+    {
+      font-size: 18px;
+      font-weight: 600;
+      font-style: italic;
+    }
+    .table td
+    {
+      font-size: 17px;
+         font-style: italic;
+    }
+</style>

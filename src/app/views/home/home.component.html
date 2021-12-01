@@ -1,0 +1,105 @@
+<div class="app-header" style="background-color: black">
+    
+ <h3 style="color: yellowgreen;    font-size: 33px;
+ padding: 0.5%;letter-spacing: 4px;">DGMO</h3>
+  </div>
+<div class="app-body" style="background: rgb(250, 245, 237);">
+  <main class="main d-flex align-items-center">
+      <div style="padding:2%;">
+        <div class="row" style="height: 200px;">
+          <div class="col-12" style="text-align: center">
+            <h2 style="    font-size: 110px;
+            font-family: inherit;
+            font-weight: 700;
+            letter-spacing: 5px;">SAP</h2>
+            <h2 style="     font-size: 25px;
+            font-family: inherit;
+            letter-spacing: 4px;
+            font-weight: 700;">SITREP AUTO PACKAGE</h2>
+           
+           <button style="height: 34px;
+           width: 120px;
+           font-size: 18px;
+           font-weight: bold;
+           float: right;
+           margin-right: -3%;
+           /* border: 5px solid white; */
+           margin-top: -3%;
+           background-color: #ff1d4d;
+           border: none;" type="button" class="btn-brand btn-sm btn-tumblr" [routerLink]="['/login']">
+              <i style="    border-right: 1px solid;
+              line-height: 1.348438rem;background: none;" class="fa fa-user"></i>
+              <span>Login</span>
+            </button>
+
+            <!-- <button type="button" style="height: 44px;
+            width: 150px;
+            font-size: 18px;
+            font-weight: bold;
+            float: right;
+            margin-right: -3%;
+            /* border: 5px solid white; */
+            margin-top: -4%;
+            background-color: #ff1d4d;
+            border: none;" class="btn btn-success" value="Login"> <i class="fa fa-user"></i>|Login</button> -->
+          </div>
+        </div>
+        <div class="row" style="margin-top:2%;">
+
+            <!-- <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig" (afterChange)="afterChange($event)">
+                <div ngxSlickItem  class="slide">
+                      <img src="../../../assets/photo-1482649671545-bc53dcf1ad7c.jpg" alt="" width="100%">
+                </div>
+                
+            </ngx-slick>
+        
+            <button (click)="addSlide()">Add</button>
+            <button (click)="removeSlide()">Remove</button>
+            <button (click)="slickModal.slickGoTo(2)">slickGoto 2</button>
+            <button (click)="slickModal.unslick()">unslick</button> -->
+            
+          <div ng-show="va" class="col-4">
+              <div class="card">
+                  <img class="card-img-top" src="../../../assets/photo-1552219997-ec5a8c8af4db.jpg" alt="Card image">
+                  
+                </div>  
+              </div>
+              <div class="col-4">
+                  <div class="card">
+                      <img class="card-img-top" src="../../../assets/photo-1489223339793-de491ea9108b.jpg" alt="Card image">
+                     
+                    </div>
+                 
+                  </div>
+                  <div class="col-4">
+                      <div class="card" >
+                          <img class="card-img-top" src="../../../assets/photo-1482649671545-bc53dcf1ad7c.jpg" alt="Card image">
+                        
+                        </div>
+                     
+                      </div>
+                    </div> 
+      </div>
+  </main>
+</div>
+<style>
+.blog .carousel-indicators {
+	left: 0;
+	top: auto;
+    bottom: -40px;
+
+}
+
+/* The colour of the indicators */
+.blog .carousel-indicators li {
+    background: #a3a3a3;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+}
+
+.blog .carousel-indicators .active {
+background: #707070;
+}
+</style>
+

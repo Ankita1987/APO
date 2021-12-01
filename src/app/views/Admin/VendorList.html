@@ -1,0 +1,81 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-align-justify"></i> <label class="h5">View Vendors Details </label>
+          <!-- <small>Form</small> -->
+        </div>
+        <div class="card-body">
+            <div class="shadow-lg p-3 mb-5 bg-white rounded" id="cardhide4">
+         <br>
+         <div class="row">
+            <div class="col-sm-12">
+             <table class="table table-bordered table-striped">
+               <thead>
+                 <tr>
+                   <th rowspan="2" >S/No</th>                   
+                   <th rowspan="2">Name of the Firm</th>
+                   <th rowspan="2">Type Of Firm</th>
+                   <th rowspan="2">Is MSME </th>
+                   <th rowspan="2">Register with APO </th>
+                   <th rowspan="2">GST No </th>
+                   <th rowspan="2">Remarks </th>                   
+                   <th rowspan="2"> View Certificate /Ware House Details</th>
+                 </tr>
+                
+               </thead>
+               <tbody>                                     
+               
+                <tr *ngFor="let sub of data">
+                  <td>{{sub.$id}}</td>
+                  <td>{{sub.nameOfFirm}}</td>
+                  <td>{{sub.isRegisterVal}}</td>               
+                  <td>{{sub.ismsmeVal}}</td>
+                  <td>{{sub.registerWithAPOVal}}</td>
+                  <td>{{sub.gstNumber}}</td>
+                  <td>{{sub.remarks}}</td>                 
+                  <td>
+
+                        <input type="hidden" value="(sub.vendorId)" >
+                       <i  (click)="viewVendorDetails(sub.vendorId,'w')" style="color:#1C2331;font-size: 23px;" class="fa fa-eye" aria-hidden="true" ></i>
+
+                       
+                       
+                      </td>
+                     
+                </tr>
+               </tbody>
+             </table>
+            
+            </div>
+            </div>
+
+            </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+ .h5 {
+      font-size: 18px;
+      font-weight: 600;
+      font-style: italic;
+    }
+  
+    .lblHeading {
+      font-size: 23px;
+      font-weight: 600;
+      font-style: italic;
+      text-decoration: underline;
+    }
+    .table th
+    {
+      font-size: 18px;
+      font-weight: 600;
+      font-style: italic;
+    }
+   </style>
+ 

@@ -1,0 +1,124 @@
+<div class="animated fadeIn">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header">
+            <i class="fa fa-align-justify"></i> <label class="h5">Add Vendor  Ware House Details </label>
+            <!-- <small>Form</small> -->
+          </div>
+          <div class="card-body">
+              <div class="shadow-lg p-3 mb-5 bg-white rounded" id="cardhide4">          
+  
+           
+            
+              <div class="row">
+              <div class="col-12"><label class="lblHeading">Ware House & Item For Register </label></div>
+            </div>
+            
+            <div class="row">
+                <div class="col-4">
+                   <div class="form-group">
+                    <label class="h5"  >Item Name </label>
+                    <input type="hidden"  [(ngModel)]="vendorWareHouseId" >
+                    <input type="hidden"  [(ngModel)]="vendorId" >
+                    <select class="form-control" [(ngModel)]="itemName" >               
+                        <option [ngValue]="item.itemName" *ngFor="let item of itemDDL">
+                          {{item.itemName}}
+                        </option>
+                      </select>
+
+                   </div>
+                </div>
+            
+             <div class="col-8">
+              <div class="form-group">
+               <label class="h5" > Ware House Address  </label>           
+               <input type="text"   [(ngModel)]="wareHouseAddress"  class="form-control" 
+               placeholder="Enter  Ware House Address ">
+              </div>  
+              </div>
+             
+           </div>
+            <div class="row">
+                <div class="col-8">
+                    <div class="form-group">
+                     <label class="h5" > Storage Capcity  </label>           
+                     <input type="text"   [(ngModel)]="storageCapacity"  class="form-control" 
+                     placeholder="Enter  Storage Capcity ">
+                    </div>  
+                    </div>
+                <div class="col-2" style="margin-top: 0.5%" >
+                    <label></label>
+                    <button type="button" *ngIf="add" (click)="addVendorWareHouse()"  class="btn btn-block btn-success">Add </button>
+                    <button type="button" *ngIf="update" (click)="updateVendorWareHouse()"  class="btn btn-block btn-success">Update </button>
+                  </div>
+                   <div class="col-sm-2"  style="margin-top: 0.5%" >
+                    <label></label>
+                    <button (click)="clearModel()" type="button" class="btn btn-block btn-warning">Reset</button>
+                  </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-12">
+                 <table class="table table-bordered table-striped">
+                   <thead>
+                     <tr>
+                       <th rowspan="2" >S/No</th>                     
+                       <th rowspan="2">Item Name</th>
+                       <th rowspan="2"> Ware House Address</th>
+                       <th rowspan="2">Storage Capcity </th>
+                       
+                       <th rowspan="2">Actions </th>
+                     </tr>
+                    
+                   </thead>
+                   <tbody>                                     
+                   
+                    <tr *ngFor="let sub of data">
+                      <td>{{sub.$id}}</td>
+                      <td>{{sub.itemName}}</td>
+                      <td>{{sub.wareHouseAddress}}</td>               
+                      <td>{{sub.storageCapacity}}</td>
+                      
+                      <td> <label style="display: none">{{sub.vendorId}}</label> <i style="color: #167495;font-size: 23px;" class="fa fa-pencil-square-o"
+                         aria-hidden="true"   (click)="editVendorWareHouse(sub.vendorWareHouseId)"   ></i> <span>|</span> 
+                          <i style="color: red;font-size: 22px" (click)="removeVendorWareHouse(sub.vendorWareHouseId)"  class="fa fa-trash-o" aria-hidden="true"></i> </td>
+                    </tr>
+                   </tbody>
+                 </table>
+                
+                </div>
+                </div>
+    
+  
+  
+          </div>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+    <style>
+      .DateColW {
+        width: 32%;
+      }
+  
+      .h5 {
+        font-size: 18px;
+        font-weight: 600;
+        font-style: italic;
+      }
+    
+      .lblHeading {
+        font-size: 23px;
+        font-weight: 600;
+        font-style: italic;
+        text-decoration: underline;
+      }
+      .table th
+      {
+        font-size: 18px;
+        font-weight: 600;
+        font-style: italic;
+      }
+    </style>

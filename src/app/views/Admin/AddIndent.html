@@ -1,0 +1,165 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-align-justify"></i> <label class="h5">Add Indents </label>
+          <!-- <small>Form</small> -->
+        </div>
+        <div class="card-body">
+
+            <div class="shadow-lg p-3 mb-5 bg-white rounded" id="cardhide4">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="form-group">
+                  <input type="hidden"  [(ngModel)]="indentId" >
+                <label class="h5" for="IndentNo">Indent No <span style="color:red">*</span></label>
+                <input type="text" class="form-control"  [(ngModel)]="indentNo" placeholder="Enter Indent No">
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label class="h5" for="IndentDate">Indent Date <span style="color:red">*</span></label>
+                <input type="date"  class="form-control" [(ngModel)]="indentDate" placeholder="Enter Indent Date">
+              </div>
+            </div>
+            <div class="col-sm-3">
+
+              <div class="form-group">
+                <label class="h5" for="Consumtion">Consumtion Year </label>
+                <select class="form-control" [(ngModel)]="consumptionYear" >               
+                    <option [ngValue]="item.consumptionYear" *ngFor="let item of consumptionYearDDL">
+                      {{item.consumptionYear}}
+                    </option>
+                  </select>
+              </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="form-group">
+                  <label class="h5" for="AccUnit">Acct Unit<span style="color:red">*</span></label>
+                  <select class="form-control" [(ngModel)]="acctUnit" >               
+                      <option [ngValue]="item.acctUnit" *ngFor="let item of acctUnitDDL">
+                        {{item.acctUnit}}
+                      </option>
+                    </select>
+
+                  
+                </div>
+              </div>
+          </div>
+          <div class="row">
+            
+            <div class="col-sm-2">
+              <div class="form-group">
+                <label class="h5" for="SanctionedQty">Sanctioned Qty<span style="color:red">*</span></label>
+                <input type="text" class="form-control"  [(ngModel)]="sanctionedQty" placeholder="Enter Sanctioned Qty">
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label class="h5" for="Estimated">Estimated Rate Per Acct Unit
+                  <span style="color:red">*</span></label>
+                <input type="text" class="form-control"  [(ngModel)]="estimatedRatePerAcctUnit" placeholder="Enter Estimated Rate Per Acct Unit
+                  ">
+              </div>
+            
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                  <label class="h5" for="UploadIndent">Upload Indent
+                    <span style="color:red">*</span></label>
+                  <input type="file"(change)="fileChange($event)" class="form-control"  id="btnUpload" value="Upload"   >
+  
+                </div>
+              </div>
+              <div class="col-2">
+                  <label></label>
+                  <button type="button" *ngIf="add" (click)="addIndent()"  class="btn btn-block btn-success">Add </button>
+                  <button type="button" *ngIf="update" (click)="updateIndent()"  class="btn btn-block btn-success">Update </button>
+                </div>
+                 <div class="col-sm-2" >
+                  <label></label>
+                  <button (click)="clearModel()" type="button" class="btn btn-block btn-warning">Reset</button>
+                </div>
+          </div>
+          
+          <br>
+          <div class="row">
+            <div class="col-sm-12">
+              <table class="table table-bordered table-striped">
+                <thead>
+                  <tr>
+                    <th>S/No</th>
+                    <th>Indent No & Date </th>
+                    <th>Consumtion Year </th>
+                    <th>Acc Unit </th>
+                    <th>Sanctioned Qty</th>
+                    <th>Estimated Rate Per Acct Unit </th>
+                    <th>Download Indent</th>
+                    <th>Action</th>
+                    <th>Verify</th>
+                  </tr>
+
+                </thead>
+                <tbody>
+                  <tr *ngFor="let sub of data">
+                   
+                      <td>{{sub.$id}}</td>
+                      <td>{{sub.indentNo}} <span>   &   </span>{{sub.indentDate}}</td>
+                      <td>{{sub.consumptionYear}}</td>               
+                      <td>{{sub.acctUnit}}</td>
+                      <td>{{sub.sanctionedQty}}</td>
+                      <td>{{sub.estimatedRatePerAcctUnit}}</td>
+                                          <td>
+                      <i style="color: red;font-size: 22px"  class="fa fa-file-pdf-o" aria-hidden="true"></i>
+                    </td>
+
+
+                    <td><i style="color: #167495;font-size: 23px;" class="fa fa-pencil-square-o"
+                      aria-hidden="true"   (click)="editIndent(sub.indentId)"   ></i> <span>|</span> 
+                       <i style="color: red;font-size: 22px" (click)="removeIndent(sub.indentId)"  class="fa fa-trash-o" aria-hidden="true"></i> </td>
+                    <td><i style="color:#00c851;font-size: 20px" class="fa fa-check" aria-hidden="true"></i> <span> |
+                      </span><i style="color: #ff4444;font-size: 20px" class="fa fa-times" aria-hidden="true"></i> </td>
+                  </tr>
+                 
+                </tbody>
+              </table>
+              <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                <li class="page-item active">
+                  <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+<style>
+   .h5 {
+      font-size: 18px;
+      font-weight: 600;
+      font-style: italic;
+    }
+  
+    .lblHeading {
+      font-size: 23px;
+      font-weight: 600;
+      font-style: italic;
+      text-decoration: underline;
+    }
+    .table th
+    {
+      font-size: 18px;
+      font-weight: 600;
+      font-style: italic;
+    }
+</style>
